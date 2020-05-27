@@ -1,0 +1,194 @@
+@charset "utf-8";
+/* CSS Document */
+	
+    .recommend_content {
+        margin-top: 45px;
+        overflow: hidden;
+    }
+    .recommend_nav {
+        float: left;
+        width: 450px;
+        height: 500px;
+    }
+
+ .recommend_nav .title{ 
+	margin:0px 0px 0px 15px; 
+	padding:0px; 
+	width:400px; 
+	height:50px;
+}
+ .recommend_nav .title_left{ 
+	margin:0px; 
+	padding:0px; 
+	float:left; 
+	width:10px; 
+	height:50px; 
+	background:#6CF;
+}  
+.recommend_nav .title_right{ 
+	border-radius:7px;
+	margin:0px; 
+	padding:0px; 
+	float:left; 
+	width:390px; 
+	height:50px; 
+	background-color: rgba(135,206,250, 0.2);
+	text-align:left; 
+	line-height:50px; 
+	vertical-align:middle; 
+	color:#FFF; 
+	font-family:"黑体"; 
+	font-weight:bold; 
+	font-size:16px; 
+	overflow:hidden;
+	cursor: pointer;
+} 
+.recommend_nav .current{ 
+	margin:0px; 
+	padding:0px 0px 0px 40px; 
+	float:left; 
+	width:390px; 
+	height:50px; 
+	background-color: #6CF;
+	text-align:left; 
+	line-height:50px; 
+	vertical-align:middle; 
+	color:#FFF; 
+	font-family:"黑体"; 
+	font-weight:bold; 
+	font-size:16px; 
+	overflow:hidden;
+	cursor: pointer;
+} 
+.recommend_nav .title_right span{ 
+	width:20px; 
+	height:50px; 
+	float:left; 
+	margin:12px 7px 0px 13px;
+}
+.recommend_nav .title_bottom{ 
+	clear:both;  
+	width:300px; 
+	height:8px;
+}   
+
+.main_title_left{ 
+	margin:0px; 
+	padding:0px; 
+	float:left; 
+	width:10px; 
+	height:40px; 
+	background:#f57900;
+}  
+.main_title_right{ 
+	border-radius:7px;
+	margin:0px; 
+	padding:0px; 
+	float:left; 
+	width:880px; 
+	height:40px; 
+	background-color: rgb(255,255,255);
+	text-align:left; 
+	line-height:40px; 
+	vertical-align:middle; 
+	color:#000; 
+	font-family:"黑体"; 
+	font-weight:bold; 
+	font-size:18px; 
+	overflow:hidden;
+} 
+.main_title_right span{ 
+	width:20px; 
+	height:50px; 
+	float:left; 
+	margin:12px 7px 0px 13px;
+}
+.main_div{
+	margin: 15px 15px 15px 15px;
+	width:auto; 
+	display:inline-block !important; 
+	display:inline; 
+	border-radius:7px;
+	float:left; 
+	background-color: rgb(255,255,255);
+	text-align:left; 
+	vertical-align:middle; 
+	color:#2e3436; 
+	font-family:"宋体"; 
+	font-weight:bold; 
+	font-size:16px; 
+}
+.main_title_bottom{ 
+	clear:both;  
+	width:300px; 
+	height:8px;
+}
+    .recommend_container{
+        overflow: hidden;
+        margin: 10px 20px 0px 20px;
+        width: 940px;
+    }
+    .recommend_show {
+        border: 10px gray;
+        border-radius: 5px;
+        margin: 1px; 
+        box-shadow: 0px 0px 2px #ffffff;
+    }
+    #main {
+        background: rgb(255,255,255);
+        border-radius: 5px;
+        padding: 20px;
+        box-shadow: 0px 0px 2px #ffffff;
+    }
+    
+    /* 分页 设置div样式的整体布局*/
+	.page-icon{
+		margin:20px 0 20px 0;/*设置距离顶部20像素*/
+		font-size:0;/*修复行内元素之间空隙间隔*/
+		text-align:center;/*设置内容居中显示*/
+	}
+	
+	/*设置共有的的样式布局，主要是进行代码优化，提高运行效率*/
+	.page-icon a,.page-disabled,.page-next{
+		border:1px solid #ccc;
+		border-radius:3px;
+		padding:4px 10px 5px;
+		font-size:14PX;/*修复行内元素之间空隙间隔*/
+		margin-right:10px;
+	}
+	
+	/*对 a 标签进行样式布局 */
+	.page-icon a{
+		text-decoration:none;/*取消链接的下划线*/
+		color:#005aa0;
+		background-color:rgb(255,255,255);
+	}
+	
+	.page-current a{
+		text-decoration:none;/*取消链接的下划线*/
+		color:#ffffff;
+		background-color:#6CF;
+	}
+	
+	.page-disabled{
+		color:#ccc;
+		background-color:rgb(255,255,255);
+	}
+	
+	.page-next i,.page-disabled i{
+		cursor:pointer;/*设置鼠标经过时的显示状态，这里设置的是显示状态为小手状态*/
+		display:inline-block;/*设置显示的方式为行内块元素*/
+		width:5px;
+		height:9px;
+		background-image:url("../img/page.jpg");/*获取图标的背景链接*/
+	}
+	.page-disabled i{
+		background-position:-80px -608px;
+		margin-right:3px;
+	}
+ 
+	.page-next i{
+		background-position:-62px -608px;
+		margin-left:3px;
+	}
+

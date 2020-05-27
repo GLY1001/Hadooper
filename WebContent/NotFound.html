@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>NotFound</title>
+<link rel="stylesheet" href="css/index.css" />
+<style type="text/css">
+.div{
+	margin-top:160px;
+	margin-left:36%;
+	border: 10px solid #f57900;
+	width:auto; 
+	display:inline-block !important; 
+	display:inline; 
+	border-radius:7px;
+	float:left; 
+	background-color: rgb(255,255,255);
+}
+.aa{
+	width: 500px;
+	height: 300px;
+	border-radius:7px;
+	text-align: center;
+	line-height: 70px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    color: #2e3436;
+}
+
+</style>
+</head>
+<body class="bg">
+<!--头部-->
+	<header class="header">
+    	<h3>基于互联网大数据的招聘数据智能分析平台</h3>
+    </header>
+    
+	<div class="div">
+	 	<div class="aa">Error！您的求职意向暂时无法检索!</br>请重新输入或修改求职意向！</br>tips：80%的机率降低薪资要求就能成功!</br><b id="second">5</b>秒后回到求职意向页面<a href="resume.html">返回</a></div>
+
+	</div>
+	<script type="text/javascript">
+	    // 获取显示秒数的元素，通过定时器来更改秒数。
+	    var sec = document.getElementById("second");
+	    var i = 5;
+	    var timer = setInterval(function () {
+	            i--;
+	            sec.innerHTML = i;
+	            if (i === 1) {
+	                window.location.href = "resume.html";
+	            }
+	        },
+	        1000);
+	
+	    // 通过 window 的 location 和 history 对象来控制网页的跳转。
+	    function goBack() {
+	        window.history.go(-1);
+	    }
+	</script>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>hadooper</title>
+<link rel="stylesheet" href = "css/basic-grey.css" />
+<link rel="stylesheet" href="css/index.css" />
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/resume.js"></script>
+</head>
+<body class="bg">
+	<!--头部-->
+	<header class="header">
+    	<h3>基于互联网大数据的招聘数据智能分析平台</h3>
+    </header>
+    
+    <div class="nav">
+    	<!--当前浏览位置-->
+        <div class="location">
+            <div class="site"><span></span>您目前所在的位置：><a href="resume.html">求职意向表</a></div>
+        </div>
+    	
+    	<!-- 导航栏 -->
+		<div class="nav_con"><ul>
+			<li><a href="other.html">深度分析</a><span></span></li>
+			<li><a href="index.html">首页</a></li>
+		</ul></div>
+	</div>
+							<form action="HiveJobQuery" method="post" class="content" onsubmit="return validateForm()">
+						    	<h1>个人信息：
+								</h1>
+						        <label>
+									<span>工作地区：</span>
+									<select id="job_location" name="job_location">
+						            	<option value="" selected disabled style="display: none;  color: #969696;">--请选择--</option>
+										<option value="山西">山西</option>
+										<option value="黑龙江">黑龙江</option>
+										<option value="湖南">湖南</option>
+										<option value="山东">山东</option>
+										<option value="北京">北京</option>
+										<option value="新疆">新疆</option>
+										<option value="河北">河北</option>
+										<option value="福建">福建</option>
+										<option value="天津">天津</option>
+										<option value="重庆">重庆</option>
+										<option value="安徽">安徽</option>
+										<option value="四川">四川</option>
+										<option value="广东">广东</option>
+										<option value="陕西">陕西</option>
+										<option value="河南">河南</option>
+										<option value="广西">广西</option>
+										<option value="宁夏">宁夏</option>
+										<option value="贵州">贵州</option>
+										<option value="辽宁">辽宁</option>
+										<option value="上海">上海</option>
+										<option value=江西>江西</option>
+										<option value="内蒙古">内蒙古</option>
+										<option value="吉林">吉林</option>
+										<option value="甘肃">甘肃</option>
+										<option value="湖北">湖北</option>
+										<option value="云南">云南</option>
+										<option value="浙江">浙江</option>
+										<option value="江苏">江苏</option>
+										<option value="海南">海南</option>
+									</select>
+								</label>
+						        
+						        <label>
+									<span>学历：</span>
+									<select id="edu" name="edu">
+						            	<option value="" selected disabled style="display: none; color: #969696;">--请选择--</option>
+										<option value="统招本科">统招本科</option>
+										<option value="本科及以上">本科及以上</option>
+										<option value="MBA及以上">MBA及以上</option>
+										<option value="硕士及以上">硕士及以上</option>
+										<option value="学历不限">学历不限</option>
+										<option value="中专/中技及以上">中专/中技及以上</option>
+										<option value="博士后">博士后</option>
+										<option value="初中及以上">初中及以上</option>
+										<option value="大专及以上">大专及以上</option>
+										<option value="高中">高中</option>
+										<option value="博士">博士</option>
+										<option value="高职">高职</option>
+										<option value="中职">中职</option>
+									</select>
+								</label>
+						        
+						        <label>
+									<span>经验：</span>
+									<select id="exp" name="exp">
+						            	<option value="" selected disabled style="display: none; color: #969696;">--请选择--</option>
+										<option value="经验不限">经验不限</option>
+										<option value="应届毕业生">应届毕业生</option>
+										<option value="在读生">在读生</option>
+										<option value="1-3年">1-3年</option>
+										<option value="3-5年">3-5年</option>
+										<option value="5-7年">5-7年</option>
+										<option value="7-10年">7-10年</option>
+										<option value="10-15年">10-15年</option>
+										<option value="15年+">15年+</option>
+									</select>
+								</label>
+						        
+						        <label>
+									<span>职位：</span>
+									<select id="job" name="job">
+						            	<option value="" selected disabled style="display: none; color: #969696;">--请选择--</option>
+										<option value="人工智能">人工智能</option>
+										<option value="图像处理">图像处理</option>
+										<option value="图像算法">图像算法</option>
+										<option value="图像识别">图像识别</option>
+										<option value="数据分析">数据分析</option>
+										<option value="数据挖掘">数据挖掘</option>
+										<option value="机器学习">机器学习</option>
+										<option value="机器视觉">机器视觉</option>
+										<option value="深度学习">深度学习</option>
+										<option value="算法">算法</option>
+										<option value="算法工程师">算法工程师</option>
+										<option value="算法研究员">算法研究员</option>
+										<option value="自然语言处理">自然语言处理</option>
+										<option value="语音识别">语音识别</option>
+									</select>
+								</label>
+						        
+						        <h1>职业技能信息：
+								</h1>
+						        <label>
+									<span>掌握技术 :</span>
+						            <textarea id="jishu" name="tecn" placeholder="每一门技术使用英文的分号作为分隔，例如：spark;hadoop;..."></textarea>
+						            <p id="err_jishu"></p>
+								</label>
+								<label>
+									<span>编程语言 :</span>
+						            <textarea id="yuyan" name="plang" placeholder="每一门语言使用英文的分号作为分隔，例如：java;python;..."></textarea>
+						            <p id="err_yuyan"></p>
+								</label>
+						        
+						        <h1>公司信息：
+								</h1>
+						        <label>
+									<span>产业结构：</span>
+						            <strong>&nbsp;&nbsp</strong>
+									<select id="industry" name="industry">
+						            	<option value=" " selected disabled style="display: none; color: #969696;">--请选择--</option>
+										<option value="移动互联网">移动互联网</option>
+										<option value="电子商务">电子商务</option>
+										<option value="信息安全">信息安全</option>
+										<option value="计算机软件">计算机软件</option>
+										<option value="智能硬件">智能硬件</option>
+										<option value="工业自动化">工业自动化</option>
+										<option value="教育">教育</option>
+										<option value="计算机服务-数据服务">计算机服务-数据服务</option>
+										<option value="机械">机械</option>
+										<option value="IT服务-系统">IT服务-系统</option>
+										<option value="电信">电信</option>
+										<option value="通信运营">通信运营</option>
+										<option value="计算机硬件">计算机硬件</option>
+									</select>
+								</label>
+						        
+						        <label>
+									<span>规模：</span>
+						            <strong>&nbsp;&nbsp</strong>
+									<select id="people" name="people">
+						            	<option value="" selected disabled style="display: none; color: #969696;">--请选择--</option>
+										<option value="0-100人">0-100人</option>
+										<option value="500-1000人">500-1000人</option>
+										<option value="1000-5000人">1000-5000人</option>
+										<option value="5000-10000人">5000-10000人</option>
+										<option value="10000以上">10000以上</option>
+									</select>
+								</label>
+						        
+						        <label>
+									<span>公司融资情况：</span>
+						            <strong>&nbsp;&nbsp</strong>
+									<select id="financing" name="financing">
+						            	<option value="" selected disabled style="display: none; color: #969696;">--请选择--</option>
+										<option value="天使轮">天使轮</option>
+										<option value="不需要融资">不需要融资</option>
+										<option value="D轮">D轮</option>
+										<option value="已上市">已上市</option>
+										<option value="未融资">未融资</option>
+										<option value="D轮及以上">D轮及以上</option>
+										<option value="A轮">A轮</option>
+										<option value="B轮">B轮</option>
+										<option value="其他">其他</option>
+										<option value="C轮">C轮</option>
+										<option value="上市公司">上市公司</option>
+										<option value="战略投资">战略投资</option>
+										<option value="IPO上市">IPO上市</option>
+									</select>
+								</label>
+						        
+						        <label>
+									<span>期望的薪资范围：</span>
+									<input type="number" id="salaryl" name="salaryl"/>--&nbsp;<input type="number" id="salaryh" name="salaryh"/>K
+								</label>
+						        <label>
+									<span>&nbsp;</span>
+									<input type="submit" class="btn" value="提交信息" />
+									<input type="reset" class="btn" value="重置" />
+								</label>
+						    </form>
+</body>
+</html>

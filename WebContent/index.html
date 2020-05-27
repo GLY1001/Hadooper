@@ -1,0 +1,190 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+<title>首页</title>
+<link rel="stylesheet" href="css/index.css" />
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+</head>
+
+<body class="bg">
+	<!--头部-->
+	<header class="header">
+    	<h3>基于互联网大数据的招聘数据智能分析平台</h3>
+    </header>
+    
+    <div class="nav">
+    	<!--当前浏览位置-->
+        <div class="location">
+            <div class="site">您当前所在的位置：><a href="index.html"> 首页</a></div>
+        </div>
+    	
+    	<!-- 导航栏 -->
+		<div class="nav_con"><ul>
+			<li><a href="resume.html">求职意向表</a></li>
+			<li><a href="other.html">深度分析</a></li>
+			<li><a href="index.html">首页</a></li>
+		</ul></div>
+	</div>
+
+    <div class="wrapper">
+    	<div class="container-fluid">
+        	<div class="row fill-h">
+            	<div class="col-lg-3 fill-h" > 
+                	<div class="xpanel-wrapper xpanel-wrapper-2">
+                    	<div class="xpanel">
+                        	<!-- 最新最热的技术（job_tag) top10 降序 -->
+							<div class="fill-h" id="jobtag"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="xpanel-wrapper xpanel-wrapper-2">
+						<div class="xpanel">
+							<!-- 最火热的职位 top20 降序 -->
+							<div class="fill-h" id="jobname"></div>
+						</div>
+					</div>            
+                </div>
+                
+                <div class="col-lg-6 fill-h">
+					<div class="xpanel-wrapper xpanel-wrapper-1">
+						<div class="xpanel">
+							<!-- 标签云 -->
+                            <div style="color:#fff; text-align:left"><h4>标签云</h4></div>
+							<div class="fill-h" id="myCanvasContainer">
+      							<canvas width="850" height="610" id="myCanvas"></canvas>
+    						</div>
+    						<div id="tags">
+      							<ul>
+      								<!-- job_tag -->
+        							<li><a href="tag.html?tag=ai">人工智能</a></li>
+        							<li><a href="tag.html?tag=gd">图像处理</a></li>
+        							<li><a href="tag.html?tag=ga">图像算法</a></li>
+        							<li><a href="tag.html?tag=gs">图像识别</a></li>
+        							<li><a href="tag.html?tag=da">数据分析</a></li>
+        							<li><a href="tag.html?tag=dd">数据挖掘</a></li>
+        							<li><a href="tag.html?tag=ml">机器学习</a></li>
+        							<li><a href="tag.html?tag=mv">机器视觉</a></li>
+        							<li><a href="tag.html?tag=dl">深度学习</a></li>
+        							<li><a href="tag.html?tag=a">算法</a></li>
+        							<li><a href="tag.html?tag=ae">算法工程师</a></li>
+        							<li><a href="tag.html?tag=ar">算法研究员</a></li>
+        							<li><a href="tag.html?tag=nd">自然语言处理</a></li>
+        							<li><a href="tag.html?tag=vs">语音识别</a></li>
+        							
+        							<!-- job_edu_require -->
+        							<li><a href="eduleveltable.html?param=mba">MBA及以上</a></li>
+        							<li><a href="eduleveltable.html?param=zhongzhuan">中专/中技及以上</a></li>
+        							<li><a href="eduleveltable.html?param=chuzhong">初中及以上</a></li>
+        							<li><a href="eduleveltable.html?param=boshi">博士</a></li>
+        							<li><a href="eduleveltable.html?param=boshihou">博士后</a></li>
+        							<li><a href="eduleveltable.html?param=buxian">学历不限</a></li>
+        							<li><a href="eduleveltable.html?param=benke">统招本科</a></li>
+        							<li><a href="eduleveltable.html?param=gaozhong">高中</a></li>
+        							<li><a href="eduleveltable.html?param=gaozhi">高职</a></li>
+        							<li><a href="eduleveltable.html?param=benke+">本科及以上</a></li>
+        							<li><a href="eduleveltable.html?param=zhongzhi">中职</a></li>
+        							<li><a href="eduleveltable.html?param=dazhuan">大专及以上</a></li>
+        							<li><a href="eduleveltable.html?param=shuoshi">硕士及以上</a></li>
+      							</ul>
+   						 	</div> 
+						</div>
+					</div>
+				</div>
+                
+                <div class="col-lg-3 fill-h">
+                    <div class="xpanel-wrapper xpanel-wrapper-2">
+						<div class="xpanel">
+							<!-- 平均薪资前五的职位名称  top5 -->
+							<div class="fill-h" id="salary_avg"></div>
+						</div>
+					</div>
+                	
+					<div class="xpanel-wrapper xpanel-wrapper-2">
+						<div class="xpanel">
+							<!-- 薪资最高的职位 top10 降序  -->
+							<div class="fill-h" id="salaryOftag"></div>
+						</div>
+					</div>
+					<div class="xpanel-wrapper xpanel-wrapper-2"></div>
+                    
+				</div>
+				
+				<div class="col-lg-3 fill-h" style="height:400px">
+					<!-- 各职位所需掌握的前10个技能点 top10 降序 -->
+					<div class="xpanel-wrapper xpanel-wrapper-1">					
+						<div class="xpanel">
+							<select id="cbar" onchange="setBar()" style="border:none;appearance:none;background:rgba(255, 255, 255, 0.7);height: 25px;line-height: 25px;">
+								<option value="人工智能" selected>人工智能</option>
+								<option value="图像处理">图像处理</option>
+								<option value="图像算法">图像算法</option>
+								<option value="图像识别">图像识别</option>
+								<option value="数据分析">数据分析</option>
+								<option value="数据挖掘">数据挖掘</option>
+								<option value="机器学习">机器学习</option>
+								<option value="机器视觉">机器视觉</option>
+								<option value="深度学习">深度学习</option>
+								<option value="算法">算法</option>
+								<option value="算法工程师">算法工程师</option>
+								<option value="算法研究员">算法研究员</option>
+								<option value="自然语言处理">自然语言处理</option>
+								<option value="语音识别">语音识别</option>
+							</select>
+							<div class="fill-h" id="jobskill"></div>
+						</div>
+					</div>
+  
+				</div>
+                
+                <div class="col-lg-3 fill-h" style="height:400px"> 
+                	<div class="xpanel-wrapper xpanel-wrapper-1">
+                    	<div class="xpanel">
+                        	<!-- 最火热的技术词的出现次数 top10 降序 -->
+							<div class="fill-h" id="pointword"></div>
+                        </div>
+                    </div>     
+                </div>
+                
+                <div class="col-lg-3 fill-h" style="height:400px"> 
+                	<div class="xpanel-wrapper xpanel-wrapper-4">
+                    	<div class="xpanel">
+                    		<select id="pie20" onchange="wordcloud()" style="border:none;appearance:none;background:rgba(255, 255, 255, 0.7);height: 25px;line-height: 25px;">
+								<option value="人工智能" >人工智能</option>
+								<option value="自然语言处理" >自然语言处理</option>
+								<option value="语音识别">语音识别</option>
+								<option value="算法研究员">算法研究员</option>
+								<option value="算法工程师">算法工程师</option>
+								<option value="算法">算法</option>
+								<option value="深度学习">深度学习</option>
+								<option value="机器视觉">机器视觉</option>
+								<option value="机器学习">机器学习</option>
+								<option value="数据挖掘">数据挖掘</option>
+								<option value="数据分析">数据分析</option>
+								<option value="图像识别">图像识别</option>
+								<option value="图像算法">图像算法</option>
+								<option value="图像处理">图像处理</option>
+							</select>
+                        	<!-- 各个职位具体的技术要求 -->
+							<div class="fill-h" id="jobrequire" ></div>
+                        </div>
+                    </div>                       
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 搜索栏 -->
+	<div class="sousuo">    
+	        <input type="text" class="search" id="search_text" placeholder="请输入相关内容进行搜索" autocomplete="off"/>
+	        <div id="auto_div"></div>
+	        <input type="button" class="button" value="搜索" onclick="searchfun()"/>
+	</div>
+    
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/echarts.js"></script>
+    <script type="text/javascript" src="js/tagcanvas.min.js"></script><!-- 标签云-->
+    <script type="text/javascript" src="js/echarts-wordcloud.min.js"></script><!-- 词云-->
+    <script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>

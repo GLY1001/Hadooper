@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>相关省份招聘信息</title>
+<link rel="stylesheet" href="css/index.css" />
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+</head>
+<body class="bg">
+	<!--头部-->
+	<header class="header">
+    	<h3>基于互联网大数据的招聘数据智能分析平台</h3>
+    </header>
+    
+    <div class="nav">
+    	<!--当前浏览位置-->
+        <div class="location">
+            <div class="site">您当前所在的位置：<a id="site_a"  href="#"></a></div>
+        </div>
+    	
+    	<!-- 导航栏 -->
+		<div class="nav_con"><ul>
+			<li><a href="resume.html">求职意向表</a></li>
+			<li><a href="other.html">深度分析</a></li>
+			<li><a href="index.html">首页</a></li>
+		</ul></div>
+	</div>
+
+    <div class="wrapper">
+    	<div class="container-fluid">
+        	<div class="row fill-h">
+            	<div class="col-lg-6 fill-h" > 
+                    <div class="xpanel-wrapper xpanel-wrapper-1">
+						<div class="xpanel">
+							<!-- 各学历薪资概情况(个) -->
+							<div class="fill-h" id="tag_edu"></div>
+						</div>
+					</div>            
+                </div>
+                	
+				<div class="col-lg-6 fill-h">
+                    <div class="xpanel-wrapper xpanel-wrapper-1">
+						<div class="xpanel">
+							<!-- 学历占比(个) -->
+							<div class="fill-h" id="edu"></div>
+						</div>
+					</div>
+				</div>  
+				
+				<div class="col-lg-6 fill-h">
+					<div class="xpanel-wrapper xpanel-wrapper-1">
+						<div class="xpanel">
+							<!-- 职位占比(个)  -->
+							<div class="fill-h" id="tag"></div>
+						</div>
+					</div>                  
+				</div>
+			
+				
+				<div class="col-lg-6 fill-h" > 
+                	<div class="xpanel-wrapper xpanel-wrapper-1">
+                    	<div class="xpanel">
+                        	<!-- 各职位薪资情况(k) -->
+							<div class="fill-h" id="tag_location"></div>
+                        </div>
+                    </div>
+                </div>
+                 
+            </div>
+        </div>
+    </div>
+    
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/echarts.js"></script>
+<script type="text/javascript" src="js/onTagDash.js"></script>
+</body>
+</html>
